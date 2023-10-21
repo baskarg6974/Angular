@@ -1,0 +1,51 @@
+<form  class="row g-3 needs-validation" novalidate>
+     
+    <div class="col-md-4">
+     <div>
+      <label for="validationCustom02" class="form-label">Empid :</label>
+      <input   [(ngModel)]="putemp.empid" type="text" class="form-control" id="emid" name="empid" value="{{putempdata.empid}}"  required >
+     
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Name :</label>
+      <input   [(ngModel)]="putemp.name" type="text" class="form-control" id="name" name="name" value="{{putempdata.name}}"  required>
+     
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Age :</label>
+      <input [(ngModel)]="putemp.age"  type="number" class="form-control" id="age" name="age"  value="{{putempdata.age}}"  required>
+     
+    </div>
+    
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Dept No :</label>
+      <input  [(ngModel)]="putemp.deptno"   type="number" class="form-control" id="deptno" name="deptno" value="{{putempdata.deptno}}" required>
+      
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Year Joined :</label>
+      <input   [(ngModel)]="putemp.yearjoined" type="number" class="form-control" id="yearjoined" name="yearjoined" value="{{putempdata.yearjoined}}"  required>
+      
+    </div>
+    
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Email :</label>
+      <input [(ngModel)]="putemp.email"  type="email" class="form-control" id="email" name="email" value="{{putempdata.email}}"   required>
+      
+    </div>
+    
+    <div class="col-12">
+      <button class="btn btn-dark" type="submit" (click)="empchangesubmit()">Submit form</button>
+    </div>
+    </div>
+    
+  </form>
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>

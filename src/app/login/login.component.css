@@ -1,0 +1,39 @@
+.jumbotron jumbotron-fluid a{
+    background-color: bisque;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.login-wrapper{
+    margin: 20rem auto ;
+    width: 20rem;
+    margin-top: 10%;
+    
+}
+input{
+    margin-bottom: 2rem;
+}
+
+.loginbutton{
+    background-color: red;
+    color: white;
+}
+.btn{
+    border-radius: 0.1cm;
+    width: 100%;
+}
+.card{
+    border-radius: 0.3cm;
+    background-color: #F6F6DD
+    
+
+}
+.form-check-label{
+color:
+#3366ff;
+}
+.loginword{
+    text-align: center;
+}
+

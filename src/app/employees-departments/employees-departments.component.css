@@ -1,0 +1,65 @@
+.empdto{
+    background-color: white;
+}
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+    margin: left 200px;;
+  }
+  .logoutbutton{
+    margin-left: 245%;
+    background-color: white;
+  }
+  .card{
+
+    background-color: red;
+    color: white;
+    
+    max-width: 200px;
+   
+    height: 50%;
+  }
+
+ .card1{
+  background-color: red;
+    color: white;
+    height: 50%;
+    max-width: 200px;
+    margin-left: 1%;
+
+ }
+ .card2{
+  background-color: red;
+    color: white;
+    height: 20%;
+    max-width: 200px;
+    margin-left: 1%;
+
+ }
+
+ .cardtitle{
+  font-size: medium;
+ }
+ .navbar-brand{
+  color: white;
+ }
+ .home-drop-down{
+  color: white;
+ }
+
+ .d-flex{
+  width: 25%;
+  column-gap: 0.5cm;
+ }
+ 
+.tablecontent{
+  margin-top: 10%;
+}
+.titlesize{
+  font-size: larger;
+}
+.testbutton{
+  margin-left: 1%;
+  height: 60%;
+  line-height: 500%;
+}

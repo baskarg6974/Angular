@@ -1,0 +1,54 @@
+<nav class="navbar navbar-danger bg-danger">
+    <div class="home-drop-down">
+      <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{pageName}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/home">Home</a>
+          <a class="dropdown-item" href="/login">Logout</a>
+         
+        </div>
+      </div>
+    </div>
+    
+     
+   
+   
+  </nav>
+  
+  
+    
+    <br> 
+    <div fxLayout="row" fxLayoutAlign="start center" class="matcard">
+  
+  
+      <button fxFlex="13%" mat-raised-button color="warn" routerLink="/employees"  class="testbutton">Employees</button>
+      <button  fxFlex="13%" mat-raised-button color="warn" routerLink="/employees-departments"  class="testbutton">Emp Dept Info</button>
+      <button  fxFlex="13%" mat-raised-button color="warn" routerLink="/departmentaccess" class="testbutton">Department Info</button>
+        </div>
+  
+  
+  <div class="empdto">
+  <table class="table table-striped table-hover">
+      <thead>
+          <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Department Number</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Department Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let empdto of employeesdto">
+            
+            <td>{{empdto.empid}}</td>
+            <td>{{empdto.name}}</td>
+            <td>{{empdto.deptno}}</td>
+            <td>{{empdto.deptname}}</td>
+            <td>{{empdto.deptloc}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>

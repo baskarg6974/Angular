@@ -1,0 +1,56 @@
+<nav class="navbar navbar-danger bg-danger">
+    <div class="home-drop-down">
+      <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{pageName}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/home">Home</a>
+          <a class="dropdown-item" href="/login">Logout</a>
+         
+        </div>
+      </div>
+    </div>
+    
+     
+   
+   
+  </nav>
+  
+  
+    
+    <br> 
+    <div fxLayout="row" fxLayoutAlign="start center" class="matcard">
+  
+  
+      <button fxFlex="13%" mat-raised-button color="warn" routerLink="/employees"  class="testbutton">Employees</button>
+      <button  fxFlex="13%" mat-raised-button color="warn" routerLink="/employees-departments"  class="testbutton">Emp Dept Info</button>
+      <button  fxFlex="13%" mat-raised-button color="warn" routerLink="/departmentaccess" class="testbutton">Department Info</button>
+        </div>
+  
+    
+    
+  <router-outlet></router-outlet>
+
+  <div>
+   
+    <ngx-datatable
+      class="material fullscreen"
+      style="top: 52px"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="50"
+     
+      [rows]="departments"
+    >
+      <ngx-datatable-column name="Deptno" ></ngx-datatable-column>
+      <ngx-datatable-column name="Deptname" ></ngx-datatable-column>
+      <ngx-datatable-column name="Deptloc"></ngx-datatable-column>
+      <ngx-datatable-column name="Deptmanager"></ngx-datatable-column>
+      <ngx-datatable-column name="Managerid"  ></ngx-datatable-column>
+      
+    </ngx-datatable>
+  </div>
+
+  
