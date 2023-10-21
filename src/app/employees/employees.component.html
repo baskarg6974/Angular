@@ -1,0 +1,238 @@
+<nav class="navbar navbar-danger bg-danger">
+    <div class="home-drop-down">
+      <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{pageName}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/home">Home</a>
+          <a class="dropdown-item" href="/login">Logout</a>
+         
+        </div>
+      </div>
+
+    </div>
+  </nav>
+    <br> 
+    <div fxLayout="row" fxLayoutAlign="start center" >
+  
+  
+      <button fxFlex="13%" class="matbutton" mat-raised-button  routerLink="/employees"  class="testbutton">Employees</button>
+      <button  fxFlex="13%" class="matbutton" mat-raised-button  routerLink="/employees-departments"  class="testbutton">Emp Dept Info</button>
+      <button  fxFlex="13%" class="matbutton" mat-raised-button  routerLink="/departmentaccess" class="testbutton">Department Info</button>
+        </div>
+  
+        <div class="back-to-home">
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  Create a record
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New record</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <input type="text" class="form-control" matInput placeholder="Employee Name" [(ngModel)]="employees1.name" id="name" name="name" aria-describedby="emailHelp">
+       </div>
+   <div class="mb-3">
+              <input type="number" class="form-control"  matInput placeholder="Age" [(ngModel)]="employees1.age" id="age" name="age" aria-describedby="emailHelp">
+           </div>
+     <div class="mb-3">
+               <input type="number" class="form-control" matInput placeholder="Dept No" [(ngModel)]="employees1.deptno" id="deptno"  name="deptno" aria-describedby="emailHelp">
+           </div>
+     <div class="mb-3">
+             <input type="number" class="form-control" matInput placeholder="yearjoined" [(ngModel)]="employees1.yearjoined" id="yearjoined" name="yearjoined" aria-describedby="emailHelp">
+            </div>
+     <div class="mb-3">
+             <input type="email" class="form-control" matInput placeholder="Email" [(ngModel)]="employees1.email" id="email" name="email" aria-describedby="emailHelp">
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="empformsubmit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      <div *ngIf="startedit">
+    
+        <form  class="row g-3 needs-validation" novalidate>
+       
+          <div class="col-md-4">
+           <div>
+            <label for="validationCustom02" class="form-label">Empid :</label>
+            <input   [(ngModel)]="putemp.empid" type="text" class="form-control" id="emid" name="empid" placeholder="{{putempdata.empid}}"  required >
+           
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Name :</label>
+            <input   [(ngModel)]="putemp.name" type="text" class="form-control" id="name" name="name" placeholder="{{putempdata.name}}"  required>
+           
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Age :</label>
+            <input [(ngModel)]="putemp.age"  type="number" class="form-control" id="age" name="age"  placeholder="{{putempdata.age}}"  required>
+           
+          </div>
+          
+          <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">Dept No :</label>
+            <input  [(ngModel)]="putemp.deptno"   type="number" class="form-control" id="deptno" name="deptno" placeholder="{{putempdata.deptno}}" required>
+            
+          </div>
+          <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">Year Joined :</label>
+            <input   [(ngModel)]="putemp.yearjoined" type="number" class="form-control" id="yearjoined" name="yearjoined" placeholder="{{putempdata.yearjoined}}"  required>
+            
+          </div>
+          
+          <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Email :</label>
+            <input [(ngModel)]="putemp.email"  type="email" class="form-control" id="email" name="email" placeholder="{{putempdata.email}}"   required>
+            
+          </div>
+          
+          <div class="col-12">
+            <button class="btn btn-dark" type="submit" (click)="empchangesubmit()">Submit form</button>
+          </div>
+          </div>
+          
+        </form>
+      
+      </div>
+    
+      <div>
+       
+           <ngx-datatable
+          class="bootstrap"
+          style="top: 52px"
+          [columnMode]="ColumnMode.force"
+          [headerHeight]="50"
+          [footerHeight]="25"
+          [rowHeight]="40"
+          [loadingIndicator]="loadingIndicator"
+                   [rows]="employees"
+        >
+          <ngx-datatable-column name="Empid" ></ngx-datatable-column>
+          <ngx-datatable-column name="Name" ></ngx-datatable-column>
+          <ngx-datatable-column name="Age"></ngx-datatable-column>
+          <ngx-datatable-column name="Deptno"></ngx-datatable-column>
+          <ngx-datatable-column name="Yearjoined"  ></ngx-datatable-column>
+          <ngx-datatable-column name="Email"  ></ngx-datatable-column>
+          <ngx-datatable-column><ng-template let-row="row" let-value="value" ngx-datatable-cell-template> <mat-icon type="button" (click)="openputdialog(row.empid)">edit</mat-icon></ng-template></ngx-datatable-column>
+
+          <ngx-datatable-column><ng-template let-row="row" let-value="value" ngx-datatable-cell-template> <mat-icon type="button" data-toggle="modal" data-target="#exampleModal1" >delete</mat-icon>
+            </ng-template></ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+
+
+      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Are you sure want to delete the record</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deletefirst(row.empid)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    
+    <div *ngIf="searchclick">
+     <div class="tablecontent">
+    <table class="table table-light table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Emp id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Dept No</th>
+          <th scope="col">Year Joined</th>
+          <th scope="col">Email</th>
+    
+    
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+    
+          <td>{{employee.empid}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.age}}</td>
+          <td>{{employee.deptno}}</td>
+          <td>{{employee.yearjoined}}</td>
+          <td>{{employee.email}}</td>
+    
+        </tr>
+    
+      </tbody>
+    </table>
+    </div>
+    
+  
+    
+    
+    
+    
+   
+    <router-outlet></router-outlet>
+    <script>var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      })</script>
+  
+  
+      <router-outlet ></router-outlet>
+  
+    
+    
+  

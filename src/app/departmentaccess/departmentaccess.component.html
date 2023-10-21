@@ -1,0 +1,31 @@
+<div class="backtohomeclass"> <button type="button" class="btn btn-dark" routerLink="/home"   >Back to home</button> </div>
+
+<div class="animate__animated animate__fadeInLeft" ><div class="login-wrapper"><div class="card"><div class="card-body"><form class="form-group-a">
+    <h4>Requires passcode to access department details</h4>
+    
+    <div class="form-group">
+        <div *ngIf="accessgranted">passcode right</div>
+  <div *ngIf="accessdenied"><div class="animate__animated animate__bounce animate__repeat-2"><div class="alert alert-danger d-flex align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+        Access Denied!!(Enter a valid passcode)
+      </div>
+    </div></div></div>
+      <label for="exampleInputPassword1">Passcode</label>
+      <input type="password" #password name="password" class="form-control" id="exampleInputPassword1" placeholder="Passcode">
+    </div>
+  
+    
+    <button type="button" class="btn btn-outline-primary"   (click)="deptdetailsaccess(password.value)">Submit</button>
+  </form></div></div></div>
+  
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+
+

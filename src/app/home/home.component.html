@@ -1,0 +1,89 @@
+<nav class="navbar navbar-danger bg-danger">
+    <div class="home-drop-down">
+      <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{pageName}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/home">Home</a>
+          <a class="dropdown-item" href="/login">Logout</a>
+         
+        </div>
+      </div>
+    </div>
+    
+     
+   
+    <div class="container-fluid">
+      <span class="navbar-brand">Welcome Baskar!</span>
+      <form class="d-flex">
+        <input  #id name="id" type=number  placeholder="Employee Id"  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+        <button type="button" class="btn"  (click)="getempbyids(id.value)">Search</button>
+        <div *ngIf="isLoading"><div class="text-center">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div></div>
+       
+      </form>
+    </div>
+  </nav>
+  
+  
+    
+    <br> 
+    <div fxLayout="row" fxLayoutAlign="start center" class="matcard">
+  
+  
+  <button fxFlex="13%" mat-raised-button color="warn" routerLink="/employees"  class="testbutton">Employees </button>
+  <button  fxFlex="13%" mat-raised-button color="warn" routerLink="/employees-departments"  class="testbutton">Emp Dept Info</button>
+  <button  fxFlex="13%" mat-raised-button color="warn" routerLink="/departmentaccess" class="testbutton">Department Info</button>
+  
+  
+  
+    
+    </div>
+    
+  
+  
+    
+    <div *ngIf="searchclick">
+     <div class="tablecontent">
+    <table class="table table-light table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Emp id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Dept No</th>
+          <th scope="col">Year Joined</th>
+          <th scope="col">Email</th>
+    
+    
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+    
+          <td>{{employee.empid}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.age}}</td>
+          <td>{{employee.deptno}}</td>
+          <td>{{employee.yearjoined}}</td>
+          <td>{{employee.email}}</td>
+    
+        </tr>
+    
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <input type="text" [formControl]="colorSearchTextInput" (input)="doColorSearch()">
+
+    <ul>
+      <li *ngFor="let color of colors | async">{{color}}</li>
+    </ul>
+
+  <router-outlet></router-outlet>
+  
